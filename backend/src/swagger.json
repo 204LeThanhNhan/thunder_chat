@@ -1,0 +1,25 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Common API Vulnerabilities Checks",
+      "version": "1.0.0",
+      "description": "# About this collection\n\nThis collection will check your APIs for the following things:\n\n###### Security Vulnerabilities\n\n- [CORS Misconfigurations](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)\n- [Directory Traversal](https://portswigger.net/web-security/file-path-traversal)\n- [SQL Injection](https://portswigger.net/web-security/sql-injection)\n- [Authentication](https://portswigger.net/web-security/authentication)\n    \n\n###### Security Headers\n\n- [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)\n- [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)\n- [Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)\n- [X-XSS-Protection](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)\n    \n\n###### [Content Secure Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)\n\n## Using the collection\n\n**Step 1:** Define the following Variables in the **Check for Common API Vulnerabilities** as a collection variable.\n\n- API's base URL you want to test in the `base_url` variable\n- Suspicious or Foreign Origin for which you want to test in `malicious_origin` variable\n- Add unauthorised subdomain URL in the `sub_domain_url` variable\n- Key name that will contain the access token in `access_token_key` variable, default is `x-access-token`\n- Valid access token to access the API in `valid_access_token_value` variable\n- Expired access token in `expired_access_token_value` variable\n- Other User's valid access token in `other_user_access_token_value` variable\n- The key that is used to send user id OR name in the `param_key` variable\n- The value in the `param_value` variable for the **key** mentioned in the `param_key`\n    \n\n**Step 2:** Once configured, run the collection within the `Runner` with the relevant environment selected.\n\n**Step 3:** View the test results. Failed tests could mean that the API is vulnerable to an attack. Check out the `Visualize` tab to learn more about the test results."
+    },
+    "servers": [
+      {
+        "url": "{{base_url}}"
+      }
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "summary": "Check for Security Headers",
+          "responses": {},
+          "tags": [
+            "Security Headers"
+          ],
+          "description": "This request checks for the following **Security Headers** in the **Response Headers** of the API.\n- [**Content-Security-Policy**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)\n- [**X-Frame-Options**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)\n- [**Strict-Transport-Security**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)\n- [**X-XSS-Protection**](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)"
+        }
+      }
+    }
+  }
